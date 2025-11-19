@@ -23,12 +23,16 @@
     }
   },
   "include": [
+    "**/*.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "../Preview1.tsx",
+    "../Preview2.tsx",
+    "../Preview3.tsx",
+    "../Preview4.tsx"
   ],
   "exclude": ["node_modules"]
 }
