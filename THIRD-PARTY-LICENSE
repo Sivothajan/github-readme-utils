@@ -47,6 +47,7 @@ by **Sivothayan Sivasiva — [https://sivothajan.dev](https://sivothajan.dev)**.
 - `eslint@9.39.1`
 - `png-to-ico@3.0.1`
 - `prettier@3.6.2`
+- `raw-loader@4.0.2`
 - `tailwindcss@4.1.17`
 - `tsx@4.20.6`
 - `tw-animate-css@1.4.0`
