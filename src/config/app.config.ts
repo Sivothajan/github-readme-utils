@@ -1,15 +1,10 @@
-import dotenv from 'dotenv';
-
-dotenv.config({ quiet: true });
-
 interface AppConfig {
   NEXT_PUBLIC_BASE_URL: string;
 }
 
-const { NEXT_PUBLIC_BASE_URL } = process.env;
-
 const appConfig: AppConfig = {
-  NEXT_PUBLIC_BASE_URL: NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000/',
+  NEXT_PUBLIC_BASE_URL:
+    process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000/',
 };
 
 const checkAppConfig = (appConfig: AppConfig) => {
