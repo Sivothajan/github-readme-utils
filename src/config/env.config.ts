@@ -1,11 +1,15 @@
 interface EnvConfig {
   GITHUB_TOKEN: string;
+  KV_REST_API_URL?: string;
+  KV_REST_API_TOKEN?: string;
 }
 
-const { GITHUB_TOKEN } = process.env;
+const { GITHUB_TOKEN, KV_REST_API_URL, KV_REST_API_TOKEN } = process.env;
 
-export const config: EnvConfig = {
+const config: EnvConfig = {
   GITHUB_TOKEN: GITHUB_TOKEN ?? '',
+  KV_REST_API_URL: KV_REST_API_URL ?? undefined,
+  KV_REST_API_TOKEN: KV_REST_API_TOKEN ?? undefined,
 };
 
 const checkEnvConfig = (config: EnvConfig) => {

@@ -115,7 +115,7 @@ async function convertSvgToPng(
 }
 
 /** Return headers and response based on type. */
-export async function generateOutput(
+async function generateOutput(
   output: string | CardStats,
   params: CardRequestParams = {}
 ): Promise<GeneratedResponse> {
@@ -163,7 +163,7 @@ export async function generateOutput(
 }
 
 /** Set headers and output response metadata. */
-export async function renderOutput(
+async function renderOutput(
   output: string | CardStats,
   params: CardRequestParams = {},
   responseCode = 200

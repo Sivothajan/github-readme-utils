@@ -4,7 +4,7 @@ interface AppConfig {
 
 const { NEXT_PUBLIC_BASE_URL } = process.env;
 
-export const appConfig: AppConfig = {
+const appConfig: AppConfig = {
   NEXT_PUBLIC_BASE_URL: NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000/',
 };
 

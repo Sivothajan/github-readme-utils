@@ -62,14 +62,9 @@ declare type GitHubWeeklyContributionStatsResult = {
 };
 
 export type {
-  GitHubContributionDay,
-  GitHubContributionWeek,
-  GitHubContributionCalendar,
-  GitHubContributionCollection,
   GitHubUser,
   GitHubGraphQLResponse,
   GitHubContributionGraphs,
-  GitHubStreak,
   GitHubContributionStatsResult,
   GitHubWeeklyContributionStatsResult,
 };
