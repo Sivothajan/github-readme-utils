@@ -19,6 +19,9 @@ import {
   normalizeGitHubDays,
 } from '@/lib/api/github/github';
 import { StreakPreviewOptions } from '@/lib/client/preview/preview.d';
+import config from '@/config/env.config';
+import { isWhitelisted } from '@/lib/api/access-control/whitelist';
+import { isBlacklisted } from '@/lib/api/access-control/blacklist';
 
 function paramsToObject(searchParams: URLSearchParams): CardRequestParams {
   const paramsObj: CardRequestParams = {};
@@ -51,6 +54,31 @@ export const renderGitHubStatsCard = async (
 
     // sanitize username
     const user = rawUser.replace(/[^a-zA-Z0-9\-]/g, '');
+
+    // 1. WHITELIST CHECK
+    // Logic: If whitelist mode is ON (DISABLE_BLACKLIST),
+    // AND the user is NOT found in either whitelist -> BLOCK THEM.
+    if (
+      config.DISABLE_BLACKLIST &&
+      !(
+        isWhitelisted(user, 'github_users') ||
+        isWhitelisted(user, 'github_organizations')
+      )
+    ) {
+      // Optional: Add a specific message so they know why
+      return renderOutput('Access denied: User not whitelisted', {}, 403);
+    }
+
+    // 2. BLACKLIST CHECK
+    // Logic: If blacklist mode is ON (!DISABLE_BLACKLIST),
+    // AND the user IS found in either blacklist -> BLOCK THEM.
+    if (
+      !config.DISABLE_BLACKLIST &&
+      (isBlacklisted(user, 'github_users') ||
+        isBlacklisted(user, 'github_organizations'))
+    ) {
+      return renderOutput('Access denied: User blacklisted', {}, 403);
+    }
 
     // --- starting year ---
     const startingYear = searchParams.get('starting_year')
