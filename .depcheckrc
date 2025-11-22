@@ -1,1 +1,1 @@
-ignores: ["@tailwindcss/postcss", "tw-animate-css", "tailwindcss"]
+ignores: ["@tailwindcss/postcss", "tw-animate-css", "tailwindcss", "raw-loader"]

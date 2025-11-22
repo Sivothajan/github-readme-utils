@@ -7,7 +7,7 @@ export const runtime = 'edge';
 
 export async function GET(req: NextRequest) {
   if (!config.KV_REST_API_URL || !config.KV_REST_API_URL) {
-    const output = svg.replace('${count}', 'missing config!');
+    const output = svg.replace(/\$\{count\}/g, 'missing config!');
     return new Response(output, {
       headers: {
         'Content-Type': 'image/svg+xml',
@@ -28,18 +28,15 @@ export async function GET(req: NextRequest) {
 
   try {
     if (path === '/') {
-      // Pass empty string, helper handles defaults
       count = isFromGitHub ? await incrementCounter('') : await getCounter('');
     } else {
-      // FIX: Pass 'path' directly. Do NOT call purifyKey(path) here.
-      // The helper function handles the encoding.
       count = await incrementCounter(path);
     }
   } catch (err) {
     console.error('Redis error:', err);
   }
 
-  const output = svg.replace('${count}', count);
+  const output = svg.replace(/\$\{count\}/g, String(count));
 
   return new Response(output, {
     headers: {
