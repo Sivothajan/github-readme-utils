@@ -103,8 +103,6 @@ Visit the live application to try the interactive builders:
 
 Display your GitHub contribution streak with a beautiful card.
 
-<!-- Add a screenshot of a streak card here -->
-
 ![Streak Card Example](https://readme-utils.vercel.app/streak?user=Sivothajan&theme=dark)
 
 ```markdown
@@ -123,7 +121,7 @@ Display your GitHub contribution streak with a beautiful card.
 | `date_format`   | string  | PHP-style date format       | `M j[, Y]`    |
 | `mode`          | string  | `daily` or `weekly`         | `daily`       |
 
-_For a full list of parameters including specific color overrides, visit the ![/streak-preview](https://readme-utils.vercel.app/streak-preview)` page._
+_For a full list of parameters including specific color overrides, visit the [/streak-preview](https://readme-utils.vercel.app/streak-preview) page._
 
 ### Visitor Counter
 
