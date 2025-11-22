@@ -211,7 +211,7 @@ This project is a modern TypeScript/Next.js port inspired by the amazing work of
 1. **[GitHub Readme Streak Stats](https://github.com/DenverCoder1/github-readme-streak-stats)** by [Jonah Lawrence](https://github.com/DenverCoder1)  
    _The original PHP implementation of the Streak Card._
 
-2. **[GitHub Profile Views Counter](https://github.com/antonkomarev/github-profile-views-counter)** by [antonkomarev](https://github.com/antonkomarev)  
+2. **[GitHub Profile Views Counter](https://github.com/antonkomarev/github-profile-views-counter)** by [Anton Komarev](https://github.com/antonkomarev)  
    _The inspiration for the visitor counter logic._
 
 This project aims to bring these utilities to a unified **Next.js** environment for easier self-hosting and extension.
