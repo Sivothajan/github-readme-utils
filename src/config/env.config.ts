@@ -2,14 +2,19 @@ interface EnvConfig {
   GITHUB_TOKEN: string;
   KV_REST_API_URL?: string;
   KV_REST_API_TOKEN?: string;
+  DISABLE_BLACKLIST?: boolean;
 }
 
-const { GITHUB_TOKEN, KV_REST_API_URL, KV_REST_API_TOKEN } = process.env;
+const { GITHUB_TOKEN, KV_REST_API_URL, KV_REST_API_TOKEN, DISABLE_BLACKLIST } =
+  process.env;
 
 const config: EnvConfig = {
   GITHUB_TOKEN: GITHUB_TOKEN ?? '',
   KV_REST_API_URL: KV_REST_API_URL ?? undefined,
   KV_REST_API_TOKEN: KV_REST_API_TOKEN ?? undefined,
+  DISABLE_BLACKLIST: DISABLE_BLACKLIST
+    ? DISABLE_BLACKLIST.toLowerCase() === 'true'
+    : false,
 };
 
 const checkEnvConfig = (config: EnvConfig) => {
