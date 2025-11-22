@@ -786,7 +786,7 @@ export function removeAnimations(svg: string): string {
 }
 
 /** Convert a color from hex to hex + opacity components. */
-export function convertHexColor(color: string): ConvertedColor {
+function convertHexColor(color: string): ConvertedColor {
   const cleaned = color.replace(/[^0-9a-f]/gi, '');
   if (cleaned.length === 3) {
     const [r, g, b] = cleaned.split('');

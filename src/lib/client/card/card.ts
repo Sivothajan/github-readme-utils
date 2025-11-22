@@ -13,7 +13,7 @@ import type { GeneratedResponse } from '@/lib/client/card/card.d';
 /**
  * Sanitize SVG string for client-side rendering
  */
-export function sanitizeSvg(svg: string): string {
+function sanitizeSvg(svg: string): string {
   return (
     svg
       // 1. Convert gradient offsets from % to decimal
@@ -140,18 +140,5 @@ export async function generateOutput(
   return {
     contentType: 'image/svg+xml',
     body: processedSvg,
-  };
-}
-
-/** Set headers and output response metadata. */
-export async function renderOutput(
-  output: string | CardStats,
-  params: CardRequestParams = {},
-  responseCode = 200
-): Promise<GeneratedResponse> {
-  const response = await generateOutput(output, params);
-  return {
-    ...response,
-    status: response.status ?? responseCode,
   };
 }

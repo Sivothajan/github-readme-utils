@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="36" role="img" aria-label="Profile Views">
+    <linearGradient id="s" x2="0" y2="100%">
+        <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
+        <stop offset="1" stop-opacity=".1" />
+    </linearGradient>
+    <mask id="m">
+        <rect width="200" height="36" rx="8" fill="#fff" />
+    </mask>
+    <g mask="url(#m)">
+        <rect width="110" height="36" fill="#555" />
+        <rect x="110" width="90" height="36" fill="#4c1" />
+        <rect width="200" height="36" fill="url(#s)" />
+    </g>
+    <g fill="#fff" font-family="Verdana" font-size="14" text-anchor="middle">
+        <text x="55" y="23" fill="#010101" fill-opacity=".3">Profile Views</text>
+        <text x="55" y="22">Profile Views</text>
+        <text x="155" y="23" fill="#010101" fill-opacity=".3">${count}</text>
+        <text x="155" y="22">${count}</text>
+    </g>
+</svg>
