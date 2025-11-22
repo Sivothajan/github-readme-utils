@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config({ quiet: true });
+
 interface AppConfig {
   NEXT_PUBLIC_BASE_URL: string;
 }
