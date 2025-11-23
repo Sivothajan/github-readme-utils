@@ -28,11 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
-    "../Preview1.tsx",
-    "../Preview2.tsx",
-    "../Preview3.tsx",
-    "../Preview4.tsx"
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
