@@ -1,14 +1,15 @@
 import { Canvg } from 'canvg';
+
+import type { GeneratedResponse } from '@/lib/client/card/card.d';
 import {
-  removeAnimations,
-  getParamValue,
-  generateErrorCard,
-  isParamTrue,
-  generateCard,
   convertHexColors,
+  generateCard,
+  generateErrorCard,
+  getParamValue,
+  isParamTrue,
+  removeAnimations,
 } from '@/lib/common/card/card';
 import type { CardRequestParams, CardStats } from '@/lib/common/card/card.d';
-import type { GeneratedResponse } from '@/lib/client/card/card.d';
 
 /**
  * Sanitize SVG string for client-side rendering

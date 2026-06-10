@@ -48,4 +48,4 @@ declare interface StreakPreviewOptions {
   excludeDaysLabel?: HexValue;
 }
 
-export type { StreakPreviewOptions, HexValue };
+export type { HexValue, StreakPreviewOptions };

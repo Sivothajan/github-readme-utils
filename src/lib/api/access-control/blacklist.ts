@@ -15,9 +15,3 @@ export const isBlacklisted = (
 ): boolean => {
   return blacklist[type].includes(item);
 };
-
-export const getBlacklist = (type: keyof BlacklistType): string[] => {
-  return blacklist[type];
-};
-
-export default blacklist;

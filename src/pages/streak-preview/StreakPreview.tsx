@@ -1,34 +1,34 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
-import { CopyButton } from '@/components/ui/shadcn-io/copy-button';
+import { useEffect, useMemo, useState } from 'react';
+
 import HEXColorPicker from '@/components/HEXColorPicker';
-import { PageHeader } from '@/components/layout/PageHeader';
 import { PageFooter } from '@/components/layout/PageFooter';
+import { PageHeader } from '@/components/layout/PageHeader';
+import { CopyButton } from '@/components/ui/shadcn-io/copy-button';
+import appConfig from '@/config/app.config';
+import { generateOutput } from '@/lib/client/card/card';
+import {
+  compareOptionsType,
+  dateFormatValues,
+  DEFAULT_OPTIONS,
+  defaultDailyStats,
+  defaultOptions,
+  defaultWeeklyStats,
+  formatToday,
+  outputTypesValues,
+  weekdays,
+} from '@/lib/client/preview/preview';
+import type {
+  HexValue,
+  StreakPreviewOptions,
+} from '@/lib/client/preview/preview.d';
+import type { CardRequestParams, CardStats } from '@/lib/common/card/card.d';
 import {
   getAvailableLocales,
   getLocaleDisplayName,
 } from '@/lib/common/locale/translations';
 import { getAllThemeNames } from '@/lib/common/themes/themes';
-import { generateOutput } from '@/lib/client/card/card';
-import {
-  defaultOptions,
-  defaultDailyStats,
-  defaultWeeklyStats,
-  formatToday,
-  weekdays,
-  dateFormatValues,
-  outputTypesValues,
-  compareOptionsType,
-  DEFAULT_OPTIONS,
-} from '@/lib/client/preview/preview';
-import appConfig from '@/config/app.config';
-
-import type {
-  HexValue,
-  StreakPreviewOptions,
-} from '@/lib/client/preview/preview.d';
-import type { CardStats, CardRequestParams } from '@/lib/common/card/card.d';
 
 export default function StreakPreview() {
   const [options, setOptions] = useState<StreakPreviewOptions>(defaultOptions);
@@ -39,6 +39,7 @@ export default function StreakPreview() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsDarkMode(document.documentElement.classList.contains('dark'));
     }
   }, []);
@@ -636,11 +637,11 @@ export default function StreakPreview() {
               border border-slate-200 dark:border-slate-800 
               p-4 sm:p-8 rounded-2xl 
               flex items-center justify-center 
-              min-h-[200px] 
+              min-h-50 
               shadow-inner transition-colors duration-300
               /* Force SVG/Image to scale nicely */
-              [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-w-[600px]
-              [&>img]:w-full [&>img]:h-auto [&>img]:max-w-[600px] 
+              [&>svg]:w-full [&>svg]:h-auto [&>svg]:max-w-150
+              [&>img]:w-full [&>img]:h-auto [&>img]:max-w-150 
               [&>img]:shadow-lg [&>img]:rounded-md
               [&>img]:object-contain
             "

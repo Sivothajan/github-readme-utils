@@ -62,9 +62,9 @@ declare type GitHubWeeklyContributionStatsResult = {
 };
 
 export type {
-  GitHubUser,
-  GitHubGraphQLResponse,
   GitHubContributionGraphs,
   GitHubContributionStatsResult,
+  GitHubGraphQLResponse,
+  GitHubUser,
   GitHubWeeklyContributionStatsResult,
 };

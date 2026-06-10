@@ -1,7 +1,8 @@
 import { NextRequest } from 'next/server';
+
+import config from '@/config/env.config';
 import { getCounter, incrementCounter } from '@/lib/api/redis/counter';
 import svg from '@/lib/common/counter/counter-batch.svg';
-import config from '@/config/env.config';
 
 export async function GET(
   req: NextRequest,

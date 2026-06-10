@@ -1,6 +1,7 @@
 import './globals.css';
-import { IBM_Plex_Mono } from 'next/font/google';
+
 import type { Metadata } from 'next';
+import { IBM_Plex_Mono } from 'next/font/google';
 import Link from 'next/link';
 
 const ibmPlexMono = IBM_Plex_Mono({

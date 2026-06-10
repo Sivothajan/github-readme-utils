@@ -1,5 +1,5 @@
-import translation from '@/lib/common/locale/translations.json';
 import localeDisplayNames from '@/lib/common/locale/locale-display-names.json';
+import translation from '@/lib/common/locale/translations.json';
 
 /**
  * Type guard to ensure the key exists in the translations JSON.

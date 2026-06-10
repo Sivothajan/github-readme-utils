@@ -1,6 +1,7 @@
 'use client';
 
 import './globals.css'; // Ensure styles are loaded
+
 import { useEffect } from 'react';
 
 export default function GlobalError({

@@ -1,27 +1,26 @@
 import sharp from 'sharp';
-import {
-  removeAnimations,
-  getParamValue,
-  generateErrorCard,
-  isParamTrue,
-  generateCard,
-  convertHexColors,
-} from '@/lib/common/card/card';
 
-import type { CardRequestParams, CardStats } from '@/lib/common/card/card.d';
+import config from '@/config/env.config';
+import { isBlacklisted } from '@/lib/api/access-control/blacklist';
+import { isWhitelisted } from '@/lib/api/access-control/whitelist';
 import type { GeneratedResponse } from '@/lib/api/card/card.d';
-
 import {
-  getGitHubContributionGraphs,
   getGitHubContributionDates,
-  getGitHubWeeklyContributionStats,
+  getGitHubContributionGraphs,
   getGitHubContributionStats,
+  getGitHubWeeklyContributionStats,
   normalizeGitHubDays,
 } from '@/lib/api/github/github';
 import { StreakPreviewOptions } from '@/lib/client/preview/preview.d';
-import config from '@/config/env.config';
-import { isWhitelisted } from '@/lib/api/access-control/whitelist';
-import { isBlacklisted } from '@/lib/api/access-control/blacklist';
+import {
+  convertHexColors,
+  generateCard,
+  generateErrorCard,
+  getParamValue,
+  isParamTrue,
+  removeAnimations,
+} from '@/lib/common/card/card';
+import type { CardRequestParams, CardStats } from '@/lib/common/card/card.d';
 
 function paramsToObject(searchParams: URLSearchParams): CardRequestParams {
   const paramsObj: CardRequestParams = {};

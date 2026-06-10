@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
-import { CopyButton } from '@/components/ui/shadcn-io/copy-button';
-import { RotateCcw, Minus, Plus } from 'lucide-react';
-import appConfig from '@/config/app.config';
-import { PageHeader } from '@/components/layout/PageHeader';
-import { PageFooter } from '@/components/layout/PageFooter';
+import { Minus, Plus, RotateCcw } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 
+import { PageFooter } from '@/components/layout/PageFooter';
+import { PageHeader } from '@/components/layout/PageHeader';
+import { CopyButton } from '@/components/ui/shadcn-io/copy-button';
+import appConfig from '@/config/app.config';
 import svg from '@/lib/common/counter/counter-batch.svg';
 
 export default function CountPreview() {
@@ -16,12 +16,14 @@ export default function CountPreview() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsDarkMode(document.documentElement.classList.contains('dark'));
     }
   }, []);
 
   useEffect(() => {
     const updated = svg.replace(/\$\{count\}/g, String(count));
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSvgContent(updated);
   }, [count]);
 
@@ -129,7 +131,7 @@ export default function CountPreview() {
               <h2 className="text-lg font-semibold text-slate-800 dark:text-white px-1">
                 Visual Preview
               </h2>
-              <div className="bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 rounded-2xl flex items-center justify-center min-h-[180px] shadow-inner">
+              <div className="bg-slate-50/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 rounded-2xl flex items-center justify-center min-h-45 shadow-inner">
                 <div
                   dangerouslySetInnerHTML={{ __html: svgContent }}
                   className="transform transition-all duration-300 hover:scale-105"

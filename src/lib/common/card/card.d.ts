@@ -16,9 +16,9 @@ declare type ConvertedColor = {
 declare type TokenFormatter = (date: Date, locale: string) => string;
 
 export type {
-  CardStats,
   CardRequestParams,
-  LocaleTranslations,
+  CardStats,
   ConvertedColor,
+  LocaleTranslations,
   TokenFormatter,
 };

@@ -1,9 +1,9 @@
 import config from '@/config/env.config';
 import type {
-  GitHubUser,
-  GitHubGraphQLResponse,
   GitHubContributionGraphs,
   GitHubContributionStatsResult,
+  GitHubGraphQLResponse,
+  GitHubUser,
   GitHubWeeklyContributionStatsResult,
 } from '@/lib/api/github/github.d';
 import { StreakPreviewOptions } from '@/lib/client/preview/preview.d';

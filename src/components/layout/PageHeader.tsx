@@ -1,8 +1,10 @@
 'use client';
 
+import { Home, Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
-import { Home, Github, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
+
+import GitHub from '@/components/icons/GitHub';
 
 interface PageHeaderProps {
   title?: string;
@@ -19,6 +21,7 @@ export function PageHeader({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsDarkMode(document.documentElement.classList.contains('dark'));
     }
   }, []);
@@ -79,7 +82,7 @@ export function PageHeader({
           "
           aria-label="View on GitHub"
         >
-          <Github className="w-5 h-5" />
+          <GitHub className="w-5 h-5" />
         </Link>
 
         <button
