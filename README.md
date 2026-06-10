@@ -10,7 +10,7 @@ A modern collection of utilities to enhance your GitHub README files with dynami
 
 - **📊 Streak Cards**: Display GitHub contribution streaks with customizable themes and styling.
 - **👁️ Visitor Counter**: Track profile or repository visits with animated SVG counters.
-- **⚡ Modern Stack**: Rebuilt from the ground up using **Next.js 16**, **TypeScript**, and **Edge Functions**.
+- **⚡ Modern Stack**: Rebuilt from the ground up using **Next.js 16**, **TypeScript**, and **Serverless Functions**.
 - **🎨 Live Preview**: Real-time preview dashboard to generate your URLs.
 - **🌓 Theme Support**: Dark and light mode compatible with preset themes.
 - **🎯 Highly Customizable**: Control colors, locales, borders, and animations via URL parameters.

@@ -219,7 +219,7 @@ export default function LicensePage() {
                   their respective licenses as described below. No ownership of
                   these components is claimed by{' '}
                   <a
-                    href="https://sivothajan.dev"
+                    href="https://sivothayan.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-medium text-foreground underline underline-offset-4 hover:text-primary inline-flex items-center gap-1"

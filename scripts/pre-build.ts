@@ -61,7 +61,7 @@ const runScript = (file: string, ...args: string[]) => {
     // \x1b[0m => reset color to default
     `\x1b[34m[STEP]\x1b[0m Running ${file}...`
   );
-  run(`tsx "${path.join(__dirname, file)}" ${args.join(' ')}`);
+  run(`bun "${path.join(__dirname, file)}" ${args.join(' ')}`);
 };
 
 // --- pre-build process ---
