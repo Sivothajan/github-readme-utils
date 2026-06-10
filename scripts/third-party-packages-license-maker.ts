@@ -92,7 +92,7 @@ let md = `# Third-Party Software Notice
 This project includes third-party software components licensed under
 open-source licenses. These components remain subject to their respective
 licenses as described below. No ownership of these components is claimed
-by **Sivothayan Sivasiva — [https://sivothajan.dev](https://sivothajan.dev)**.
+by **Sivothayan Sivasiva — [https://sivothayan.com](https://sivothayan.com)**.
 
 ---
 `;
