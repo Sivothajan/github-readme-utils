@@ -10,7 +10,7 @@
   "scripts": {
     "dev:portless": "portless gh-readme-utils next dev",
     "dev": "next dev",
-    "dev:prebuild": "bun run scripts/pre-build.ts --pre-build",
+    "prebuild": "bun run scripts/pre-build.ts --pre-build",
     "build": "next build",
     "start:portless": "portless gh-readme-utils next start",
     "start": "next start",
