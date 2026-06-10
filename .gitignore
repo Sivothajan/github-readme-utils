@@ -42,3 +42,6 @@ next-env.d.ts
 
 # custom files and folders
 /public/*
+
+# eslint
+.cache
