@@ -1,0 +1,66 @@
+{
+  "productionDeps": [
+    {
+      "license": "Apache-2.0",
+      "packages": ["class-variance-authority", "sharp"]
+    },
+    {
+      "license": "CC0-1.0",
+      "packages": ["simple-icons"]
+    },
+    {
+      "license": "ISC",
+      "packages": ["lucide-react"]
+    },
+    {
+      "license": "MIT",
+      "packages": [
+        "@radix-ui/react-popover",
+        "canvg",
+        "clsx",
+        "lodash",
+        "motion",
+        "next",
+        "raw-loader",
+        "react",
+        "react-colorful",
+        "react-dom",
+        "tailwind-merge",
+        "tw-animate-css"
+      ]
+    }
+  ],
+  "devDeps": [
+    {
+      "license": "Apache-2.0",
+      "packages": ["portless", "typescript"]
+    },
+    {
+      "license": "ISC",
+      "packages": ["knip"]
+    },
+    {
+      "license": "MIT",
+      "packages": [
+        "@tailwindcss/postcss",
+        "@types/bun",
+        "@types/lodash",
+        "@types/react",
+        "@types/react-dom",
+        "eslint",
+        "eslint-config-next",
+        "eslint-config-prettier",
+        "eslint-plugin-simple-import-sort",
+        "eslint-plugin-unused-imports",
+        "husky",
+        "jiti",
+        "lint-staged",
+        "png-to-ico",
+        "postcss",
+        "prettier",
+        "tailwindcss",
+        "ts-prune"
+      ]
+    }
+  ]
+}

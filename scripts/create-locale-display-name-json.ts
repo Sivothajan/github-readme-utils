@@ -1,6 +1,7 @@
 import { writeFileSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+
 import { getAvailableLocales } from '@/lib/common/locale/translations';
 
 // ANSI codes
@@ -47,15 +48,18 @@ const pad = (str: string, length: number): string =>
   str + ' '.repeat(length - str.length);
 
 // Print header
+// eslint-disable-next-line no-console
 console.log(
   `${BOLD}${GREEN}| ${pad('Locale code', maxLocaleLength)} | ${pad('Language Name', maxNameLength)} |${RESET}`
 );
+// eslint-disable-next-line no-console
 console.log(
   `${GREEN}|-${'-'.repeat(maxLocaleLength)}-|-${'-'.repeat(maxNameLength)}-|${RESET}`
 );
 
 // Print rows with colors
 rows.forEach(([locale, name]) => {
+  // eslint-disable-next-line no-console
   console.log(
     `| ${CYAN}${pad(locale, maxLocaleLength)}${RESET} | ${YELLOW}${pad(name, maxNameLength)}${RESET} |`
   );
@@ -73,4 +77,5 @@ const outputPath = path.resolve(
 );
 
 writeFileSync(outputPath, JSON.stringify(localeObject, null, 2), 'utf8');
+// eslint-disable-next-line no-console
 console.log(`${BOLD}${GREEN}\nJSON file created: ${outputPath}${RESET}`);

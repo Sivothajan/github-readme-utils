@@ -57,18 +57,22 @@ const usageGroups: Record<string, Record<string, string>> = {
 
 // --- Print grouped licenses ---
 for (const [usageType, deps] of Object.entries(usageGroups)) {
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[1;34m => bold blue text for section headers
     // \x1b[0m => reset color
     `\n\x1b[1;34m=== ${usageType} Dependencies ===\x1b[0m`
   );
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[36m => cyan text for column header
     `\x1b[36mPackage Name - License\x1b[0m`
   );
+  // eslint-disable-next-line no-console
   console.log('----------------------');
 
   Object.keys(deps).forEach((dep) => {
+    // eslint-disable-next-line no-console
     console.log(
       // \x1b[33m => yellow text for each dependency
       // \x1b[0m => reset color
@@ -78,6 +82,7 @@ for (const [usageType, deps] of Object.entries(usageGroups)) {
 }
 
 // --- Done ---
+// eslint-disable-next-line no-console
 console.log(
   // \x1b[1;32m => bold green for success message
   '\n\x1b[1;32m✅ License check completed successfully!\x1b[0m\n'

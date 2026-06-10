@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import fs from 'fs';
 
 // --- helper functions ---
 
@@ -56,6 +56,7 @@ const __dirname = path.dirname(__filename);
  * @param file File name of the script
  */
 const runScript = (file: string, ...args: string[]) => {
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[34m => blue text for [STEP]
     // \x1b[0m => reset color to default
@@ -66,6 +67,7 @@ const runScript = (file: string, ...args: string[]) => {
 
 // --- pre-build process ---
 const preBuild = (): void => {
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[36m => cyan text
     // \x1b[0m => reset to default
@@ -76,13 +78,16 @@ const preBuild = (): void => {
   runScript('third-party-packages-license-maker.ts');
   runScript('public-assets-generator.ts', '--generate-favicons');
 
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[34m => blue text for [STEP]
     // \x1b[0m => reset to default
     '\x1b[34m[STEP]\x1b[0m Running tests...'
   );
+  // eslint-disable-next-line no-console
   console.log('\x1bThere are no tests to run currently.\x1b[0m\n');
 
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[1;32m => bold green text for success
     // \x1b[0m => reset to default
@@ -96,6 +101,7 @@ const shouldPreBuild = args.includes('--pre-build');
 if (shouldPreBuild) {
   preBuild();
 } else {
+  // eslint-disable-next-line no-console
   console.log(
     // \x1b[33m => yellow text for skipped message
     // \x1b[0m => reset color to default

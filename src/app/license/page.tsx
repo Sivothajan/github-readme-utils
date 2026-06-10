@@ -8,6 +8,7 @@ import {
 
 import { PageFooter } from '@/components/layout/PageFooter';
 import { PageHeader } from '@/components/layout/PageHeader';
+import licenses from '@/data/licenses.json';
 
 const MITLicenseSection = () => {
   const year = new Date().getFullYear();
@@ -48,56 +49,6 @@ type DependencyGroup = {
   license: string;
   packages: string[];
 };
-
-const productionDeps: DependencyGroup[] = [
-  {
-    license: 'MIT',
-    packages: [
-      '@radix-ui/react-popover@1.1.15',
-      'canvg@4.0.3',
-      'clsx@2.1.1',
-      'lodash@4.17.21',
-      'motion@12.23.24',
-      'next@16.0.3',
-      'react@19.2.0',
-      'react-colorful@5.6.1',
-      'react-dom@19.2.0',
-      'tailwind-merge@3.4.0',
-    ],
-  },
-  {
-    license: 'Apache-2.0',
-    packages: ['class-variance-authority@0.7.1', 'sharp@0.34.5'],
-  },
-  {
-    license: 'ISC',
-    packages: ['lucide-react@0.554.0'],
-  },
-];
-
-const devDeps: DependencyGroup[] = [
-  {
-    license: 'MIT',
-    packages: [
-      '@tailwindcss/postcss@4.1.17',
-      '@types/lodash@4.17.20',
-      '@types/node@24.10.1',
-      '@types/react@19.2.5',
-      'eslint@9.39.1',
-      'png-to-ico@3.0.1',
-      'prettier@3.6.2',
-      'raw-loader@4.0.2',
-      'tailwindcss@4.1.17',
-      'tsx@4.20.6',
-      'tw-animate-css@1.4.0',
-      'typescript-eslint@8.47.0',
-    ],
-  },
-  {
-    license: 'Apache-2.0',
-    packages: ['typescript@5.9.3'],
-  },
-];
 
 const DependencySection = ({
   title,
@@ -238,12 +189,12 @@ export default function LicensePage() {
               <div className="space-y-10">
                 <DependencySection
                   title="Production Dependencies"
-                  groups={productionDeps}
+                  groups={licenses.productionDeps}
                 />
                 <div className="h-px w-full bg-border/50" />
                 <DependencySection
                   title="Development Dependencies"
-                  groups={devDeps}
+                  groups={licenses.devDeps}
                 />
               </div>
 

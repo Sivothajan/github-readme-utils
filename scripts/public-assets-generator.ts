@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import sharp from 'sharp';
+
 import pngToIco from 'png-to-ico';
+import sharp from 'sharp';
 
 /**
  * ⚠️ Top-level await is not supported in CommonJS (CJS) modules.
@@ -32,6 +33,7 @@ import pngToIco from 'png-to-ico';
 
   const checkEnvVars = (generateFavicons: boolean, generateOG: boolean) => {
     if (!generateFavicons && !generateOG) {
+      // eslint-disable-next-line no-console
       console.log(
         fmt.yellow(
           'No assets to generate. Set --generate-og and/or --generate-favicons flag(s).'
@@ -88,6 +90,7 @@ import pngToIco from 'png-to-ico';
         .resize(size, size)
         .png({ compressionLevel: 9 })
         .toFile(file);
+      // eslint-disable-next-line no-console
       console.log(`${fmt.cyan('PNG')}  ${size}x${size}`);
     }
 
@@ -102,6 +105,7 @@ import pngToIco from 'png-to-ico';
         .resize(size, size)
         .webp({ quality: 95 })
         .toFile(file);
+      // eslint-disable-next-line no-console
       console.log(`${fmt.magenta('WEBP')} ${size}x${size}`);
     }
 
@@ -114,10 +118,12 @@ import pngToIco from 'png-to-ico';
     }
     const icoBuffer = await pngToIco(icoFiles);
     await fs.writeFile(path.join(OUT, 'favicon.ico'), icoBuffer);
+    // eslint-disable-next-line no-console
     console.log(`${fmt.yellow('ICO')}   favicon.ico (includes 256x256)`);
 
     // --- 4️⃣ Copy original SVG (Blue)
     await fs.copyFile(SRC, path.join(OUT, 'logo-symbol-icon.svg'));
+    // eslint-disable-next-line no-console
     console.log(`${fmt.blue('SVG')}   logo-symbol-icon.svg`);
 
     // --- 5️⃣ Generate site.webmanifest (Bold White)
@@ -179,8 +185,10 @@ import pngToIco from 'png-to-ico';
       path.join(OUT, 'site.webmanifest'),
       JSON.stringify(manifest, null, 2)
     );
+    // eslint-disable-next-line no-console
     console.log(`${fmt.bold(fmt.white('MANIFEST'))} site.webmanifest`);
   } else {
+    // eslint-disable-next-line no-console
     console.log(
       fmt.yellow(
         'Skipping favicon generation (set --generate-favicons flag to enable)'
@@ -200,6 +208,7 @@ import pngToIco from 'png-to-ico';
       .resize(1200, 630)
       .png({ compressionLevel: 9 })
       .toFile(ogPng);
+    // eslint-disable-next-line no-console
     console.log(`${fmt.red('OG')}   og.png`);
 
     await sharp(OG_SRC, {
@@ -209,8 +218,10 @@ import pngToIco from 'png-to-ico';
       .resize(1200, 630)
       .webp({ quality: 95 })
       .toFile(ogWebp);
+    // eslint-disable-next-line no-console
     console.log(`${fmt.red('OG')}   og.webp`);
   } else {
+    // eslint-disable-next-line no-console
     console.log(
       fmt.yellow('Skipping OG generation (set --generate-og flag to enable)')
     );
@@ -218,6 +229,7 @@ import pngToIco from 'png-to-ico';
 
   // --- Final Success Message (Green & Bold)
   if (generateFavicons && generateOG) {
+    // eslint-disable-next-line no-console
     console.log(
       fmt.bold(
         fmt.green(
@@ -226,6 +238,7 @@ import pngToIco from 'png-to-ico';
       )
     );
   } else if (generateFavicons && !generateOG) {
+    // eslint-disable-next-line no-console
     console.log(
       fmt.bold(
         fmt.green(
@@ -234,6 +247,7 @@ import pngToIco from 'png-to-ico';
       )
     );
   } else if (!generateFavicons && generateOG) {
+    // eslint-disable-next-line no-console
     console.log(fmt.bold(fmt.green('\n✅ OG images generated successfully.')));
   }
 })();

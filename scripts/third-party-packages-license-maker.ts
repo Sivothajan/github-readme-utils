@@ -121,6 +121,7 @@ md = md.trimEnd() + '\n';
 
 // --- Write file ---
 fs.writeFileSync(outputPath, md, 'utf-8');
+// eslint-disable-next-line no-console
 console.log(
   // \x1b[1;32m => bold green for success message
   `\x1b[1;32m✅ THIRD-PARTY-LICENSE.md generated successfully at ${outputPath}\x1b[0m\n`
