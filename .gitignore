@@ -44,4 +44,4 @@ next-env.d.ts
 /public/*
 
 # eslint
-.cache
+.cache/
