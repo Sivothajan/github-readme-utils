@@ -1,13 +1,14 @@
-import { useCallback, useMemo, FC, ReactNode, ChangeEvent } from 'react';
+import { debounce } from 'lodash';
+import { Pipette } from 'lucide-react';
+import { ChangeEvent, FC, ReactNode, useCallback, useMemo } from 'react';
+import { RgbaColor, RgbaColorPicker } from 'react-colorful';
+
+import { Input } from '@/components/ui/input';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { Pipette } from 'lucide-react';
-import { RgbaColor, RgbaColorPicker } from 'react-colorful';
-import { debounce } from 'lodash';
-import { Input } from '@/components/ui/input';
 
 const DEFAULT_CHILDREN = (
   <div className="bg-linear-to-br from-pink-300/20 via-violet-300/20 to-indigo-300/20 flex items-center justify-center rounded-full h-fit w-fit aspect-square p-[0.2rem] md:p-[0.2vw]">

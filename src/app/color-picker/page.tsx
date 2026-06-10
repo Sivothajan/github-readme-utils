@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+
 import HEXColorPicker from '@/components/HEXColorPicker';
 
 const Home = () => {

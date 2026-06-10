@@ -15,9 +15,3 @@ export const isWhitelisted = (
 ): boolean => {
   return whitelist[type].includes(item);
 };
-
-export const getWhitelist = (type: keyof WhitelistType): string[] => {
-  return whitelist[type];
-};
-
-export default whitelist;

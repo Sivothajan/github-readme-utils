@@ -1,9 +1,10 @@
 'use client';
 
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { PageHeader } from '@/components/layout/PageHeader';
+import Link from 'next/link';
+
 import { PageFooter } from '@/components/layout/PageFooter';
+import { PageHeader } from '@/components/layout/PageHeader';
 
 export default function Home() {
   return (

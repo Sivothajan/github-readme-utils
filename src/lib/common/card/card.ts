@@ -1,14 +1,14 @@
-import { getTranslation } from '@/lib/common/locale/translations';
-import { getTheme } from '@/lib/common/themes/themes';
-import { getAllColors } from '@/lib/common/colors/colors';
 import { GitHubContributionStatsResult } from '@/lib/api/github/github.d';
 import type {
-  CardStats,
   CardRequestParams,
+  CardStats,
   ConvertedColor,
   LocaleTranslations,
   TokenFormatter,
 } from '@/lib/common/card/card.d';
+import { getAllColors } from '@/lib/common/colors/colors';
+import { getTranslation } from '@/lib/common/locale/translations';
+import { getTheme } from '@/lib/common/themes/themes';
 
 const cssColors = new Set(getAllColors().map((color) => color.toLowerCase()));
 const WEEKDAY_ABBREVIATIONS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

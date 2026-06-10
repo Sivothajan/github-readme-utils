@@ -1,9 +1,9 @@
 'use client';
 
-import * as React from 'react';
-import { AnimatePresence, HTMLMotionProps, motion } from 'motion/react';
-import { CheckIcon, CopyIcon } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { CheckIcon, CopyIcon } from 'lucide-react';
+import { AnimatePresence, HTMLMotionProps, motion } from 'motion/react';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -63,6 +63,7 @@ function CopyButton({
   const Icon = localIsCopied ? CheckIcon : CopyIcon;
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLocalIsCopied(isCopied ?? false);
   }, [isCopied]);
 

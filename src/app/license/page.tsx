@@ -1,12 +1,13 @@
 import {
-  Scale,
-  Box,
   AlertTriangle,
+  Box,
   CheckCircle2,
   ExternalLink,
+  Scale,
 } from 'lucide-react';
-import { PageHeader } from '@/components/layout/PageHeader';
+
 import { PageFooter } from '@/components/layout/PageFooter';
+import { PageHeader } from '@/components/layout/PageHeader';
 
 const MITLicenseSection = () => {
   const year = new Date().getFullYear();

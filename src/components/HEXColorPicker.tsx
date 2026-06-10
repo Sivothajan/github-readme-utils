@@ -1,5 +1,6 @@
 'use client';
 import { FC } from 'react';
+
 import ColorPicker from '@/components/ui/color-picker';
 
 interface HEXColorPickerProps {

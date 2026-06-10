@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+
 import { renderGitHubStatsCard } from '@/lib/api/card/card';
 
 export async function GET(req: NextRequest) {
