@@ -2,9 +2,9 @@
   "$schema": "https://www.schemastore.org/package.json",
   "name": "github-readme-utils",
   "author": {
-    "name": "senkanthal.org",
-    "email": "contact@senkanthal.org",
-    "url": "https://senkanthal.org"
+    "name": "sivothayan",
+    "email": "gh@sivothayan.com",
+    "url": "https://sivothayan.com"
   },
   "private": true,
   "scripts": {
