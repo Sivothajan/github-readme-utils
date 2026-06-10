@@ -20,6 +20,7 @@
     "generate:assets": "bun scripts/public-assets-generator.ts --generate-favicons",
     "check:licenses": "bun scripts/third-party-packages-license-checker.ts",
     "create:licenses": "bun scripts/third-party-packages-license-maker.ts",
+    "make:licenses": "bun scripts/third-party-packages-license-json-maker.ts",
     "create:localeDisplayNames:json": "bun scripts/create-locale-display-name-json.ts",
     "prune:code:check": "ts-prune",
     "knip": "knip",
